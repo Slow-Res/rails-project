@@ -7,11 +7,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'hello_coffee' %>
+    <%# javascript_pack_tag 'hello_coffee' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/header" %>
+
+    <main style="min-height: 90vh; padding-left: ;">
+      <%= yield %>
+    </main>
+
+       <%= render "shared/footer" %>
   </body>
 </html>
