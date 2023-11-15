@@ -17,7 +17,15 @@
       
       <% if current_user %>
 
+      <div style="display: flex; gap: 2vw; margin-right: 2vw;">
         <%= link_to 'Sign out', destroy_user_session_path , class:"nav-link", method: :DELETE %>
+        <%= link_to 'Profile', new_user_session_path , class:"nav-link" %>
+
+ 
+
+      </div>
+
+        
         
       <% else %>
 

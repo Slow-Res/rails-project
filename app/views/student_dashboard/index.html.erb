@@ -1,0 +1,39 @@
+
+<style>
+
+    .container {
+        padding: 1vw;
+        margin-top: 0.5vw;
+    
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+    }
+
+    .sidebar-container {
+        flex: 0.3;
+    }
+    .main-container {
+        flex: 0.7;
+    }
+
+    
+</style>
+
+
+
+
+<div class="container row"> 
+
+    <div class="sidebar-container" >
+ 
+        <%= render "sidebar" %>
+    </div>
+
+    <div class="main-container">
+        <h1>main content</h1>
+    </div>
+
+</div>

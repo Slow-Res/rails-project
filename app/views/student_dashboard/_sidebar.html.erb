@@ -1,0 +1,47 @@
+
+<style>
+    .bar-item a {
+        text-decoration: none;
+        color: white;
+
+    }
+    .bar-item {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+    .bar-item:hover {
+        cursor: pointer;
+        opacity: 0.5;
+        border-bottom: 2px white solid;
+    }
+</style>
+
+<h1>side bar</h1>
+
+<div style="display: flex; flex-direction: column; gap: 1vh;background-color: gray;">
+
+    <div class="bar-item">
+        <%= link_to 'Courses', "" %>
+    </div>
+
+    <div class="bar-item">
+        <%= link_to 'Assignments', "" %>
+    </div>
+ 
+
+    <div class="bar-item">  
+        <%= link_to 'Sechudle', "" %>
+    </div>
+
+        <div class="bar-item">
+        <%= link_to 'Profile', "" %>
+    </div>
+
+
+            <div class="bar-item">
+    <%= link_to 'Sign out', destroy_user_session_path , class:"nav-link", method: :DELETE %>
+    </div>
+
+  
+
+</div>
