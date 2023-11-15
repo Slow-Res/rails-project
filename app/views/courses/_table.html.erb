@@ -1,0 +1,80 @@
+
+
+
+<table class="table table-striped">
+  
+  <thead>
+    <tr>
+
+        <th>
+            ID
+        </th>
+
+
+        <th>
+            Code
+        </th>
+
+
+        <th>
+            Title
+        </th>
+
+        <th>
+            Instructor
+        </th>
+
+
+        <th>
+            Start -  End
+        </th>
+
+
+        <th>
+            Capcity
+        </th>
+
+
+        <th>
+            Status
+        </th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% if @courses.present? && @courses.any? %>
+  <% @courses.each do |item| %>
+    <% if item.status == "Active"  %>
+      <tr class="table-success">
+        <td>  <%= item.id %>  </td>
+        <td>  <%= item.code %> </td>
+        <td>  <%= item.title %> </td>
+
+        <!-- Access teacher's name from preloaded data -->
+        <td>  <%= item.enrollments.find_by(role: :teacher)&.user&.full_name %> </td>
+
+        <td>   <%= item.start_date.strftime("%B %d") %>  - <%= item.end_date.strftime("%B %d") %>  </td>
+        <td>  <%= item.enrollments.count %> / <%= item.capacity %> </td>
+        <td> Open </td>
+      </tr>
+    <% else %>
+      <tr class="table-danger">
+        <td>  <%= item.id %>  </td>
+        <td>  <%= item.code %> </td>
+        <td>  <%= item.title %> </td>
+
+        <!-- Access teacher's name from preloaded data -->
+        <td>  <%= item.enrollments.find_by(role: :teacher)&.user&.full_name %> </td>
+
+        <td>   <%= item.start_date.strftime("%B %d") %>  - <%= item.end_date.strftime("%B %d") %>  </td>
+        <td>  <%= item.enrollments.count %> / <%= item.capacity %> </td>
+        <td> Closed </td>
+      </tr>
+    <% end %>
+  <% end %>        
+<% end %>
+    
+ 
+
+  </tbody>
+</table>

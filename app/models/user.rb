@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   has_many :enrollments
   has_many :courses, through: :enrollments
+  has_many :announcements
 
   def has_role?(role_name)
     self.role == role_name.to_s

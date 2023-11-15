@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   get "student-dashboard" , to:"student_dashboard#index"
 
+  get "student-courses" , to:"courses#index"
+  get "student-assignments" , to:"assignments#index"
+  get "student-Enrollments" , to:"enrollments#index"
 
 end

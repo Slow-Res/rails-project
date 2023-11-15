@@ -28,12 +28,13 @@
 <div class="container row"> 
 
     <div class="sidebar-container" >
- 
         <%= render "sidebar" %>
     </div>
 
-    <div class="main-container">
+    <div class="main-container" id="main-container">
         <h1>main content</h1>
     </div>
 
 </div>
+
+<%= javascript_pack_tag 'scripts/load_content' %>

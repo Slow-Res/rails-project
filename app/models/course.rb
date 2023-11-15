@@ -11,5 +11,9 @@ class Course < ApplicationRecord
 
     has_many :enrollments
     has_many :users, through: :enrollments
+    has_many :announcements
+
+    scope :course_teacher, -> { joins(enrollments: :user).where(enrollments: { role: :teacher }).limit(1) }
+ 
   
 end

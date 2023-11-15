@@ -21,20 +21,24 @@
 <div style="display: flex; flex-direction: column; gap: 1vh;background-color: gray;">
 
     <div class="bar-item">
-        <%= link_to 'Courses', "" %>
+        <%= link_to 'Courses', "" , id: 'Courses-link' %>
     </div>
 
     <div class="bar-item">
-        <%= link_to 'Assignments', "" %>
+        <%= link_to 'Enrollments', "" , id: 'Enrollments-link' %>
+    </div>
+
+    <div class="bar-item">
+        <%= link_to 'Assignments', "" , id: 'Assignments-link' %>
     </div>
  
 
     <div class="bar-item">  
-        <%= link_to 'Sechudle', "" %>
+        <%= link_to 'Sechudle', "" , id: 'Sechudle-link' %>
     </div>
 
         <div class="bar-item">
-        <%= link_to 'Profile', "" %>
+        <%= link_to 'Profile', "" , id: 'Profile-link' %>
     </div>
 
 
@@ -45,3 +49,6 @@
   
 
 </div>
+
+
+<%= javascript_pack_tag 'scripts/sidebar' %>
